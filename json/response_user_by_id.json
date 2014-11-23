@@ -1,0 +1,12 @@
+{
+	"_id":"54724fe894a3609a64fd81a6",
+	"__v":0,
+	"refresh_token":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+	"access_token":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+	"room_number": null,
+	"email":"user@email.com",
+	"name":"Our user",
+	"given_name":"our",
+	"sn":"user",
+	"basic":"username"
+}
