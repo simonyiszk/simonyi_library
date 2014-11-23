@@ -1,1 +1,1 @@
-{"virtualbox":{"/home/vagrant/simonyi-konyvtar":{"guestpath":"/home/vagrant/simonyi-konyvtar","hostpath":"D:/workspace/simonyi-library","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/workspace/simonyi-library/vagrant","disabled":false}}}
+{"virtualbox":{"/home/vagrant/simonyi-konyvtar":{"guestpath":"/home/vagrant/simonyi-konyvtar","hostpath":"C:/Users/Szabolcs/Desktop/workspace/simonyi_library","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/Szabolcs/Desktop/workspace/simonyi_library/vagrant","disabled":false}}}
