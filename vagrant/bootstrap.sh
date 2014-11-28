@@ -20,12 +20,7 @@ cd node-v0.10.33/
 ./configure && make && sudo make install
 
 # Node packages
-sudo npm install -g express 
-npm install -g bower yo
+sudo npm install -g express bower
 
-cd /home/vagrant/simonyi-konyvtar/back-end/
+cd /home/vagrant/simonyi_library/application/
 npm install
-
-cd /home/vagrant/simonyi-konyvtar/front-end/
-npm install
-bower install

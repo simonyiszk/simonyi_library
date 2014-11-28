@@ -21,13 +21,12 @@ mobile - mobilszám
 
 var userSchema = new Schema({
   basic: {type: String, default: ''},
+  internal_id: {type: String, default: ''},
   sn: {type: String, default: ''},
   given_name: {type: String, default: ''},
   name: {type: String, default: ''},
   email: {type: String, default: ''},
   room_number: {type: String, default: ''},
-  access_token: {type: String, default: ''},
-  refresh_token: {type: String, default: ''}
 });
 
 userSchema.statics.findByName = function (name, cb) {
