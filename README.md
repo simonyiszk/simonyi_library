@@ -12,12 +12,12 @@ Web application for the Library of the Simonyi Károly College for Advanced Stud
 
 ## Install
 
-1 Install Vagrant
-2 `cd /vagrant` and execute `vagrant up`
-3 `vagrant ssh`
-4 in VM `cd ~/simonyi-konyvtar/application` and type `npm install`
-5 run the application `node app.js`
-6 app will run on http://localhost:4567
+1. Install Vagrant
+2. `cd /vagrant` and execute `vagrant up`
+3. `vagrant ssh`
+4. in VM `cd ~/simonyi-konyvtar/application` and type `npm install`
+5. run the application `node app.js`
+6. app will run on http://localhost:4567
 
 ## Development
 
