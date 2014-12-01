@@ -1,21 +1,23 @@
 var express = require('express');
 var _profile = express.Router();
-var _userById = express.Router();
+var _id = express.Router();
 
 var User = require('../models/user');
 
-/* GET user. */
+/* GET user profile. */
 _profile.get('/', function(req, res) {
-  res.send('respond with a resource');
+  res.send(req.user);
 });
 
 /* GET user by ID 
  *
  * params: id
- *
  */
-_userById.get('/', function(req, res) {
+_id.get('/', function(req, res) {
   User.findOne(req.params.id, function(err, result) {
+    if (err)
+      console.log(err);
+
     res.send(result);
   });
 });
@@ -23,5 +25,5 @@ _userById.get('/', function(req, res) {
 /* export the routers */
 module.exports = {
   profile: _profile,
-  userById: _userById
+  id: _id
 };
