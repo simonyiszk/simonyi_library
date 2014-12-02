@@ -23,7 +23,7 @@ var books = require('./routes/books');
 var search = require('./routes/search');
 var lends = require('./routes/lends');
 
-/* import the mongodb models */
+/* import the required mongodb models */
 var User = require('./models/user');
 
 /* initialize passport to use OAuth2 strategy */
@@ -100,6 +100,16 @@ passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
 
+/* helper middleware for checking the user authenticated before
+ */
+
+function authenticated(req, res, next) {
+  if (req.isAuthenticated())
+    return next();
+  else
+    res.send('Authentication required');
+}
+
 /* connect to mongodb */
 var connect = function () {
   console.log('Connecting to MongoDB');
@@ -136,15 +146,15 @@ app.use(passport.session());
 /* routes and handlers */
 app.use('/', index);
 
-app.use('/profile', users.profile);
+app.use('/profile', authenticated, users.profile);
 app.use('/user/:id', users.id);
 
-app.use('/lend/new', lends.newLend);
+app.use('/lend/new', authenticated, lends.newLend);
 app.use('/lend/show/:id', lends.id);
 app.use('/lend/list/:limit', lends.list);
 app.use('/lend/user/:id', lends.user);
 
-app.use('/book/new', books.newBook);
+app.use('/book/new', authenticated, books.newBook);
 app.use('/book/show/:id', books.id);
 app.use('/book/list/:limit', books.list);
 
@@ -157,8 +167,13 @@ app.get('/login', passport.authenticate('oauth2', {
 
 app.get('/auth', passport.authenticate('oauth2', {
   failureRedirect: '/failuer',
-  successRedirect: '/book/lend'
+  successRedirect: '/'
 }));
+
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
 
 
 // catch 404 and forward to error handler

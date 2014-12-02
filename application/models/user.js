@@ -20,13 +20,19 @@ mobile - mobilszám
 
 
 var userSchema = new Schema({
+  internal_id: {type: String, default: '', required: '{PATH} is required!'},
+  sn: {type: String, default: '', required: '{PATH} is required!'},
+  given_name: {type: String, default: '', required: '{PATH} is required!'},
+  name: {type: String, default: '', required: '{PATH} is required!'},
+  email: {type: String, default: '', required: '{PATH} is required!'},
   basic: {type: String, default: ''},
-  internal_id: {type: String, default: ''},
-  sn: {type: String, default: ''},
-  given_name: {type: String, default: ''},
-  name: {type: String, default: ''},
-  email: {type: String, default: ''},
   room_number: {type: String, default: ''},
+  bme: {type: String, default: ''},
+  schacc: {type: String, default: ''},
+  vir: {type: String, default: ''},
+  virUid: {type: String, default: ''},
+  eduPersonEntitlement: {type: String, default: ''},
+  mobile: {type: String, default: ''}
 });
 
 userSchema.statics.findByName = function (name, cb) {
