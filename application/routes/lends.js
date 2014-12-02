@@ -45,12 +45,17 @@ _newLend.get('/', function(req, res, next) {
 
 // POST a new lend
 _newLend.post('/', function(req, res, next) {
-  console.log('User: ', req.user);
 
+  if (errors) {
+    res.status(400).send(errors);
+    return;
+  }
+
+  var date = new Date();
   var lend = new Lend({
     user: req.user._id,
     book: req.body.bookid,
-    date_back: Date.now() + 14
+    date_back: date.setDate(date.getDate() + 12) // 12 days
   });
 
   lend.save(function(err, lend) {

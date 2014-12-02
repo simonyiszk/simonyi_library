@@ -31,6 +31,7 @@ _newBook.get('/', function(req, res) {
 
 // POST new book to database
 _newBook.post('/', function(req, res) {
+
   var book = new Book({
     title: req.body.title,
     isbn: req.body.isbn,

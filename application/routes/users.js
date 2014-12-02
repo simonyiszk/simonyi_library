@@ -1,4 +1,6 @@
 var express = require('express');
+var validator = require('express-validator');
+
 var _profile = express.Router();
 var _id = express.Router();
 
