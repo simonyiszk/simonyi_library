@@ -147,16 +147,16 @@ app.use(passport.session());
 app.use('/', index);
 
 app.use('/profile', authenticated, users.profile);
-app.use('/user/:id', users.id);
+app.use('/user', users.id);
 
 app.use('/lend/new', authenticated, lends.newLend);
-app.use('/lend/show/:id', lends.id);
-app.use('/lend/list/:limit', lends.list);
-app.use('/lend/user/:id', lends.user);
+app.use('/lend/show', lends.id);
+app.use('/lend/list', lends.list);
+app.use('/lend/user', lends.user);
 
 app.use('/book/new', authenticated, books.newBook);
-app.use('/book/show/:id', books.id);
-app.use('/book/list/:limit', books.list);
+app.use('/book/show', books.id);
+app.use('/book/list', books.list);
 
 app.use('/search', search);
 

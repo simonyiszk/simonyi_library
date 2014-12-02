@@ -15,8 +15,8 @@ _profile.get('/', function(req, res) {
  *
  * params: id
  */
-_id.get('/', function(req, res) {
-  User.findOne(req.params.id, function(err, result) {
+_id.get('/:id', function(req, res) {
+  User.findOne({_id: req.params.id}, function(err, result) {
     if (err)
       console.log(err);
 

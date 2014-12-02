@@ -6,8 +6,10 @@ var _id = express.Router();
 var _newBook = express.Router();
 
 // GET all books
-_list.get('/', function(req, res, next) {
-  Book.find(function(err, results) {
+_list.get('/:limit', function(req, res, next) {
+  Book.find()
+  .limit(req.params.limit)
+  .exec(function(err, results) {
     if (err) {
       console.log(err);
       res.send('Something bad happened!');
@@ -18,8 +20,8 @@ _list.get('/', function(req, res, next) {
 });
 
 // GET book by ID
-_id.get('/', function(req, res, next) {
-  Book.findOne(req.params.id, function(err, result) {
+_id.get('/:id', function(req, res, next) {
+  Book.findOne({_id: req.params.id}, function(err, result) {
     res.send(result);
   });
 });

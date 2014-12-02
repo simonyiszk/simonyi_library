@@ -8,17 +8,18 @@ var _id = express.Router();
 var _user = express.Router();
 
 // GET all lends
-_list.get('/', function(req, res, next) {
+_list.get('/:limit', function(req, res, next) {
   Lend.find()
   .populate('user')
   .populate('book')
+  .limit(req.params.limit)
   .exec(function(err, results) {
     res.send(results);
   });
 });
 
 // GET lends by user
-_user.get('/', function(req, res, next) {
+_user.get('/:id', function(req, res, next) {
   Lend.find()
   .populate('user')
   .populate('book')
@@ -29,8 +30,8 @@ _user.get('/', function(req, res, next) {
 });
 
 // GET lend by ID
-_id.get('/', function(req, res, next) {
-  Lend.findOne(req.params.id)
+_id.get('/:id', function(req, res, next) {
+  Lend.findOne({_id: req.params.id})
   .populate('user')
   .populate('book')
   .exec(function(err, result) {
