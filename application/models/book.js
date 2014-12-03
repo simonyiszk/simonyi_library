@@ -12,6 +12,11 @@ var bookSchema = new Schema({
 	category: {type: String, default: ''}
 });
 
+bookSchema.index({
+	title: 1,
+	author: 1
+});
+
 bookSchema.methods.findSimilarTypes = function(cb) {
 	return this.model('Book').find({ category: this.category }, cb);
 };

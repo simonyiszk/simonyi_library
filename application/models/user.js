@@ -35,6 +35,11 @@ var userSchema = new Schema({
   mobile: {type: String, default: ''}
 });
 
+userSchema.index({
+  name: 1,
+  email: 1
+});
+
 userSchema.statics.findByName = function (name, cb) {
   this.find({ name: new RegExp(name, 'i') }, cb);
 };
