@@ -13,29 +13,32 @@ search.get('/:term', function(req, res, next) {
 
   console.log('Search term: ', req.params.term);
 
-  Book.find({title: req.params.term}, function(err, books) {
+  Book.find({title: new RegExp('.*' + req.params.term + '.*', 'i')}, function(err, books) {
     if (err) {
       console.log(err);
     }
 
+    console.log('searching in books');
     _books = books;
     complete();
   });
 
-  Book.find({author: req.params.term}, function(err, authors) {
+  Book.find({author: new RegExp('.*' + req.params.term + '.*', 'i')}, function(err, authors) {
     if (err) {
       console.log(err);
     }
 
+    console.log('searching in authors');
     _authors = authors;
     complete();
   });
 
-  User.find({name: req.params.term}, function(err, users) {
+  User.find({name: new RegExp('.*' + req.params.term + '.*', 'i')}, function(err, users) {
     if (err) {
       console.log(err);
     }
-
+    
+    console.log('searching in users');
     _users = users;
     complete();
   });
