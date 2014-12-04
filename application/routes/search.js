@@ -11,9 +11,9 @@ search.get('/:term', function(req, res, next) {
   var _authors = null;
   var _users = null;
 
-  console.log('Search term: ', req.params.term);
+  var searchTerm = req.params.term.replace(/[aeiáéíouűúőóüö]/g,'.');
 
-  Book.find({title: new RegExp('.*' + req.params.term + '.*', 'i')}, function(err, books) {
+  Book.find({title: new RegExp('.*' + searchTerm + '.*', 'i')}, function(err, books) {
     if (err) {
       console.log(err);
     }
@@ -23,7 +23,7 @@ search.get('/:term', function(req, res, next) {
     complete();
   });
 
-  Book.find({author: new RegExp('.*' + req.params.term + '.*', 'i')}, function(err, authors) {
+  Book.find({author: new RegExp('.*' + searchTerm + '.*', 'i')}, function(err, authors) {
     if (err) {
       console.log(err);
     }
@@ -33,7 +33,7 @@ search.get('/:term', function(req, res, next) {
     complete();
   });
 
-  User.find({name: new RegExp('.*' + req.params.term + '.*', 'i')}, function(err, users) {
+  User.find({name: new RegExp('.*' + searchTerm + '.*', 'i')}, function(err, users) {
     if (err) {
       console.log(err);
     }
