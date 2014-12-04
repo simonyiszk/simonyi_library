@@ -47,9 +47,8 @@ _newLend.get('/', function(req, res, next) {
 // POST a new lend
 _newLend.post('/', function(req, res, next) {
 
-  if (errors) {
-    res.status(400).send(errors);
-    return;
+  if (req.body.bookid === "" || req.body.bookid === null) {
+    res.send('Missing bookid');
   }
 
   var date = new Date();
