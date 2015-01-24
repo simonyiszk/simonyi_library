@@ -1,0 +1,37 @@
+<header ng-controller="HeaderCtrl">
+    <div class="wrapper">
+        <a href="#" class="site-logo has-transition"><img src="/images/logo.png"></a>
+
+        <div class="menu-icon" ng-click="toggleMenu()">
+            <div class="first"></div>
+            <div class="middle"></div>
+            <div class="last"></div>
+        </div>
+
+        <div class="header-search">
+            <div class="header-search-icon use-sprite"></div>
+            <div class="has-transition">
+                <input ng-model="searchField" type="text" placeholder="Keress szerzőre, címre..." />
+                <input type="submit" value="" class="use-sprite" ng-click="search(searchField)"/>
+            </div>
+        </div>
+
+        <div class="profile-menu" ng-show="menuOpen">
+            <a href="#" class="profile-menu-item profile-link">
+                <span><img src="/images/temp/prof-pic-small.png" /></span>
+                Bálint Ferenc
+            </a>
+            <a href="#" class="profile-menu-item">
+                Szabályzat
+            </a>
+            <div class="profile-menu-item opening clear">
+                <div>Következő nyitvatartás:</div>
+                <p>
+                    2014.04.04.<br />
+                    19:00 - 20:00<br />
+                    SCH 1319<br />
+                </p>
+            </div>
+        </div>
+    </div>
+</header>

@@ -8,47 +8,16 @@
 		<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<header>
-			<div class="wrapper">
-				<a href="#" class="site-logo has-transition"><img src="/images/logo.png"></a>
-				
-				<div class="menu-icon">
-					<div class="first"></div>
-					<div class="middle"></div>
-					<div class="last"></div>
-				</div>
-				
-				<div class="header-search">
-					<div class="header-search-icon use-sprite"></div>
-					<form class="has-transition">
-						<input type="text" placeholder="Keress szerzőre, címre..." />
-						<input type="submit" value="" class="use-sprite" />
-					</form>
-				</div>
-				
-				<div class="profile-menu">
-					<a href="#" class="profile-menu-item profile-link">
-						<span><img src="/images/temp/prof-pic-small.png" /></span>
-						Bálint Ferenc
-					</a>
-					<a href="#" class="profile-menu-item">
-						Szabályzat
-					</a>
-					<div class="profile-menu-item opening clear">
-						<div>Következő nyitvatartás:</div>
-						<p>
-							2014.04.04.<br />
-							19:00 - 20:00<br />
-							SCH 1319<br />
-						</p>
-					</div>
-				</div>
-			</div>
-		</header>
+
+    <% include header %>
+
 		<section>
 			<div class="wrapper">
+
 				<h1>Legújabb könyvek</h1>
+
 				<div class="book-list clear">
+
 					<article class="available has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -71,6 +40,7 @@
 							<h2><a href="#">The Maze Runner, egy hosszú címmel</a></h2>
 						</div>
 					</article>
+
 					<article class="waiting-list has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -95,6 +65,7 @@
 							<h2><a href="#">The Maze Runner, egy hosszú címmel</a></h2>
 						</div>
 					</article>
+
 					<article class="reading has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -118,6 +89,7 @@
 							<h2><a href="#">The Maze Runner, egy hosszú címmel</a></h2>
 						</div>
 					</article>
+
 					<article class="warning has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -141,6 +113,7 @@
 							<h2><a href="#">The Maze Runner, egy hosszú címmel</a></h2>
 						</div>
 					</article>
+
 					<article class="available has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -163,6 +136,7 @@
 							<h2><a href="#">The Maze Runner, egy hosszú címmel</a></h2>
 						</div>
 					</article>
+
 					<article class="waiting-list has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -187,6 +161,7 @@
 							<h2><a href="#">The Maze Runner, egy hosszú címmel</a></h2>
 						</div>
 					</article>
+
 					<article class="reading has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -210,6 +185,7 @@
 							<h2><a href="#">The Maze Runner, egy hosszú címmel</a></h2>
 						</div>
 					</article>
+
 					<article class="warning has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -233,6 +209,7 @@
 							<h2><a href="#">The Maze Runner, egy hosszú címmel</a></h2>
 						</div>
 					</article>
+
 					<article class="available has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -255,6 +232,7 @@
 							<h2><a href="#">The Maze Runner, egy hosszú címmel</a></h2>
 						</div>
 					</article>
+
 					<article class="waiting-list has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -279,6 +257,7 @@
 							<h2><a href="#">The Maze Runner, egy hosszú címmel</a></h2>
 						</div>
 					</article>
+
 					<article class="reading has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -302,6 +281,7 @@
 							<h2><a href="#">The Maze Runner, egy hosszú címmel</a></h2>
 						</div>
 					</article>
+
 					<article class="warning has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -325,21 +305,20 @@
 							<h2><a href="#">The Maze Runner, egy hosszú címmel</a></h2>
 						</div>
 					</article>
+
 				</div>
+
 				<div class="pager-buttons clear">
 					<a href="#" class="btn prev-btn has-transition">Előző oldal</a>
 					<a href="#" class="btn next-btn has-transition">Következő oldal</a>
 				</div>
+
 			</div>
+
 		</section>
-		<footer>
-			<div class="wrapper">
-				<a href="http://simonyi.bme.hu" class="simonyi-logo"><img src="/images/simonyi-logo.png"></a>
-				<a href="http://sch.bme.hu" class="sch-logo"><img src="/images/sch-logo.png"></a>
-				<p>Copyright Simonyi Károly Szakkollégium - Oktatási csoport</p>
-			</div>
-		</footer>
 
+        <% include footer %>
 
+        <% include scripts %>
 	</body>
 </html>
