@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="library">
+<html ng-app="library" ng-cloak>
 	<head>
 		<meta charset="utf-8" />
 		<title>Simonyi Könyvtár</title>
@@ -16,8 +16,13 @@
 
 				<h1>Legújabb könyvek</h1>
 
-				<div class="book-list clear">
+				<div class="book-list clear" ng-controller="BookListCtrl">
 
+                    <div ng-repeat="item in books">
+                        <book-tile book="item"></book-tile>
+                    </div>
+
+                    <!--
 					<article class="available has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -282,6 +287,7 @@
 						</div>
 					</article>
 
+
 					<article class="warning has-transition">
 						<div class="book-image">
 							<div class="available-sign">
@@ -305,6 +311,7 @@
 							<h2><a href="#">The Maze Runner, egy hosszú címmel</a></h2>
 						</div>
 					</article>
+					-->
 
 				</div>
 

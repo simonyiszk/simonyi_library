@@ -20,18 +20,16 @@ _list.post('/:limit', function(req, res, next) {
 });
 
 // GET book page
-_id.get('/:id', function(req, res, next) {
+_id.get('/', function (req, res, ext) {
+     res.render('book');
+});
+
+// POST book by id
+_id.post('/:id', function(req, res, next) {
     Book.findOne({_id: req.params.id}, function(err, result) {
-        console.log(result);
-        res.render('book', result);
+        res.send(result);
     });
 });
-
-// GET book by ID
-_id.post('/', function(req, res, next) {
-
-});
-
 
 // GET page where you can add book
 _newBook.get('/', function(req, res) {
