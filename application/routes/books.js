@@ -6,7 +6,7 @@ var _id = express.Router();
 var _newBook = express.Router();
 
 // GET all books
-_list.get('/:limit', function(req, res, next) {
+_list.post('/:limit', function(req, res, next) {
   Book.find()
   .limit(req.params.limit)
   .exec(function(err, results) {
@@ -19,12 +19,19 @@ _list.get('/:limit', function(req, res, next) {
   });
 });
 
-// GET book by ID
+// GET book page
 _id.get('/:id', function(req, res, next) {
-  Book.findOne({_id: req.params.id}, function(err, result) {
-    res.send(result);
-  });
+    Book.findOne({_id: req.params.id}, function(err, result) {
+        console.log(result);
+        res.render('book', result);
+    });
 });
+
+// GET book by ID
+_id.post('/', function(req, res, next) {
+
+});
+
 
 // GET page where you can add book
 _newBook.get('/', function(req, res) {

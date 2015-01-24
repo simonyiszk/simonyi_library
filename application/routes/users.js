@@ -8,7 +8,12 @@ var User = require('../models/user');
 
 /* GET user profile. */
 _profile.get('/', function(req, res) {
-  res.send(req.user);
+  res.render('profile');
+});
+
+/* POST user profile. */
+_profile.post('/', function(req, res) {
+    res.send(req.user);
 });
 
 /* GET user by ID 
