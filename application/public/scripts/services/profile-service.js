@@ -9,6 +9,7 @@ angular.module('library.services.profile', [])
 
         var _profile = {};
         var _books = [];
+        var _lends = [];
 
         return {
             setProfile: function (profile) {
@@ -22,6 +23,12 @@ angular.module('library.services.profile', [])
             },
             getBooks: function () {
                 return _books;
+            },
+            setLends: function (lends) {
+                _lends = lends;
+            },
+            getLends: function (lends) {
+                return _lends;
             }
         }
     }

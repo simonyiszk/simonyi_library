@@ -23,7 +23,7 @@ angular.module('library.services.api', [])
                 return $http.post('/book/list/' + limit);
             },
             search: function(searchField) {
-                return $http.get('/search')
+                return $http.get('/search/' + searchField)
             }
         };
     }

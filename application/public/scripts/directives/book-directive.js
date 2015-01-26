@@ -27,7 +27,7 @@ angular.module('library.directives.book', [])
                         '   <img ng-src="{{book.coverPhoto}}" alt="{{book.author}} - {{book.title}}" />' +
                         '       <div class="book-info has-transition">' +
                         '           <div class="book-info-top">' +
-                        '               <p>Összes darabszám: {{book.pieces}}</p>' +
+                        '               <p>Összes darabszám: {{book.num}}</p>' +
                         '               <p>Elérhető darabszám: {{book.out}}</p>' +
                         '           </div>' +
                         '           <div class="book-info-bottom">' +
@@ -44,8 +44,24 @@ angular.module('library.directives.book', [])
             link: function($scope, element, attr) {
                 console.log('book-tile' + $scope.book);
 
+                $scope.book.available = false;
+                $scope.book.waitingList = false;
+                $scope.book.warning = false;
+                $scope.book.reading = false;
 
+                var userLends = profile.getLends();
 
+                userBooks.map(function(lend, index) {
+                    if ($scope.book._id === lend.book._id) {
+                        // TODO checking return time and reading
+                    }
+                });
+
+                if ($scope.book.num <= $scope.book.out) {
+                    $scope.book.waitingList = true;
+                } else if ($scope.book.num > $scope.book.out) {
+                    $scope.book.available = true;
+                }
             }
         }
     }

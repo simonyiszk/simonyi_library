@@ -26,7 +26,18 @@ angular.module('library.controllers.header', [])
         }
 
         function search(searchField) {
-            api.search(searchField);
+
+            if (searchField === undefined || searchField === "") {
+                console.log('missing parameter');
+                return;
+            }
+
+            api.search(searchField)
+                .success(function (result) {
+                    console.log(result);
+                }). error(function (error) {
+                    console.log(error);
+                });
         }
     }
 ]);
